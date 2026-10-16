@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Physics Portal by Ariq</title>
+  <script>
+    /* Apply a saved theme before the first paint so there is no flash. */
+    document.documentElement.dataset.theme = "light";
+    try { var t = JSON.parse(localStorage.getItem("h2-theme-v1")); if (t === "dark") document.documentElement.dataset.theme = "dark"; } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Literata:opsz,wght@7..72,400;7..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="login" class="login">
+    <section class="login-brand" aria-hidden="true">
+      <svg class="login-wave" viewBox="0 0 600 220" preserveAspectRatio="none">
+        <path d="M0 110 C 50 20, 100 20, 150 110 S 250 200, 300 110 S 400 20, 450 110 S 550 200, 600 110" />
+        <path d="M0 110 C 50 50, 100 50, 150 110 S 250 170, 300 110 S 400 50, 450 110 S 550 170, 600 110" />
+      </svg>
+      <p class="login-eyebrow">Physics Portal by Ariq · H2 Physics</p>
+      <h1>Study materials, practice and revision.</h1>
+      <p class="login-sub">Topic notes, past papers with solutions, quizzes, the practical exam guide and interactive demos, in one place.</p>
+    </section>
+    <section class="login-panel">
+      <form id="login-form" class="login-form" autocomplete="off">
+        <p class="login-mark">Physics Portal <span>by Ariq</span></p>
+        <h2>Welcome</h2>
+        <p class="muted">Log in with your name and the code your tutor gave you.</p>
+        <label class="field">
+          <span>Your name</span>
+          <input id="user" type="text" autocomplete="username" autocapitalize="words" autofocus>
+        </label>
+        <label class="field">
+          <span>Login code</span>
+          <input id="pw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false">
+        </label>
+        <p id="login-error" class="field-error" role="alert" hidden></p>
+        <button type="submit" class="btn btn-primary btn-block" id="login-btn">Log in</button>
+        <p class="login-foot muted">Your progress is saved to your account, so it follows you to any device.</p>
+        <p class="login-admin"><a id="admin-link" href="#">Tutor login</a></p>
+      </form>
+    </section>
+  </main>
+
+  <div id="app" class="app" hidden>
+    <header id="masthead" class="masthead"></header>
+    <div class="main-col">
+      <div id="topbar" class="topbar"></div>
+      <main id="view" class="page" tabindex="-1"></main>
+    </div>
+    <nav id="tabbar" class="tabbar" aria-label="Sections"></nav>
+  </div>
+
+  <div id="overlay-root"></div>
+  <p id="toast" class="toast" role="status" hidden></p>
+  <script src="config.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
